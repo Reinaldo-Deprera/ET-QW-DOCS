@@ -1,0 +1,17 @@
+body {
+	color: #ffffff;
+	background-color: #000000;
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+}
+
+img {
+	float: left;
+	margin: 5px 10px 10px 0;
+}
+
+p {
+	text-align: justify;
+}
+
+
