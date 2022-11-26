@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>ETQW Player's Guide - Multiplayer</title>
+		<meta name="author" content="Jeffry Moxley" />
+		<meta name="description" content="Enemy Territory: Quake Wars Player's Guide" />
+		<script type="text/javascript" src="../_cj/default.js"></script>
+		<style type="text/css">
+			@import "../_cj/default.css";
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div id="header">
+				<a id="etqw" href="http://www.enemyterritory.com/" title="Enemy Territory QUAKE Wars website - Internet Connection Required" target="_blank"></a>
+				<a class="cur" id="adv-user-guide" href="server.html"></a>
+				<a id="help-guide" href="../help/readme.html"></a>
+				<a id="community" href="http://community.enemyterritory.com/" title="Community website - Internet Connection Required" target="_blank"></a>
+				<br class="clear" />
+				<h1 id="title">Multiplayer</h1>
+				<div id="subNav">
+						<ul>
+							<li><a href="modes.html">Gametypes</a></li>
+							<li><a href="join.html">Joining a Game</a></li>
+							<li><a class="cur" href="server.html">Starting a Server</a></li>
+							<li><a href="bots.html">Bots</a></li>
+						</ul>
+				</div>
+			</div>
+			<div id="leftNav">
+				<ul>
+					<li><a href="../index.html">Welcome</a></li>
+					<li><a href="../overview.html">Game Overview</a></li>
+					<li><a href="../navigation/limbo_hud.html"title="Contains Sub Menus"_blank>In-Game Menus *</a></li><li><a href="../objectives/objectives.html"title="Contains Sub Menus"_blank>Objectives *</a></li>
+					<li><a href="../maps/area_22.html">Maps</a></li>
+					<li><a href="../classes/gdf/soldier.html">Classes</a></li>
+					<li><a href="../gdf_weapons.html">Infantry Weapons</a></li>
+					<li><a href="../deployables/gdf/engineer.html">Deployables</a></li>
+					<li><a href="../vehicles/gdf/husky.html">Vehicles</a></li>
+					<li><a href="../profile.html">Profile Settings</a></li>
+					<li><a class="cur" href="server.html"title="Contains Sub Menus"_blank>Multiplayer *</a></li>
+					<li><a href="../rank.html">Campaign Rewards</a></li>
+					<li><a href="../stats.html">Persistent Stats</a></li>
+				</ul>
+			</div>
+			<div id="content">
+				<h2>Starting a Server</h2>
+				<P>&nbsp;</P>
+				<P>First, you must decide how many players your server will be able to support.  This is largely determined by the Internet connection upstream of your server.  To determine the upstream of your Internet connection, please contact your Internet Service Provider.  Below is a list of some standard upstream values - your specific network setup and Internet connection may not exactly match the values on the list.  To the right of each respective upstream value is the maximum player limit that we suggest.  In order to limit the number of human player connections to your server, you must set your &quot;Max Players&quot; count in the Server Launcher.  Set this value to the number of players that most closely matches the upstream value of your server.</P>
+				256Kbps: 8 players<BR>
+				512Kbps: 13 players<BR>
+				768Kbps: 17 players<BR>
+				1.5Mbps: 24 players</P>
+				<BR>
+				<BR>
+				<P>If you are on a connection that cannot support the number of human players you desire,  you can add bots to your server. Although you will not be able to add an unlimited number of bots, they don’t require the same amount of network overhead as human players.  As an example, if you have the minimum amount of bot players set at 16  (Bot Option/Minimum Clients) bots will automatically adjust their numbers to keep the total player count at 16.  Below is a guideline showing the maximum number of human players and bots that a limited Internet connection will support and still provide a good gameplay experience for players.</P>
+				<P>Suggested Player to Bot maximum (Minimum Clients = 16, Maximum Players - determined by upstream value)</P>
+				256Kbps: 4 players + 12 bots<BR>
+				512Kbps: 10 players + 6 bots<BR>
+				768Kbps: 13 players + 3 bots</P>
+				<BR>
+				<BR>
+				<h3>Setup</h3>
+				<BR>
+				<P>Enemy Territory: QUAKE Wars comes with a server tool that will allow you to set all server variables, save server profiles, and then launch a server.  The installer will place a shortcut to this tool in your Start Menu.  Several options need to be set within the server tool before a server can be launched:</P>
+				<ol class="decimal">
+				<li>The server executable (etqwded.exe) needs to be selected.  From the second page in the server tool, the first option under Game Environment is 'Executable'.  Select this option, browse to the folder where ET:QW has been installed, and then select etqwded.exe.  The browse window should default to this location.</li>
+				<li>A map rotation must be created.  On the first page, select the Rotation option.  In Campaign mode there are four campaigns to choose from; in StopWatch and Objective mode you can select each individual map.</li>
+				<li>A profile must be created and saved.  From the File menu, select Save Profile As... and save the profile.</li>
+				</ol>
+				<P>These are the minimum options that need to be set prior to launching the server.  A full explanation of each option is below.</P>
+				<h3>Options</h3>
+				<h5>Server Properties</h5>
+				<b><i>-SERVER NAME</b></i> - This text will show the server name as it will appear to other players in the game browser.<BR>
+				<b><i>-MIN PLAYERS</b></i> - This sets the minimum amount of players that need to be in the server before it will exit warmup and allow the game to begin.<BR>
+				<b><i>-MAX PLAYERS</b></i> - The maximum amount of players that will be allowed to connect before the 'Server is Full' error is given.<BR>
+				<b><i>-GAME</b></i> - Changes the game to run any other mods that may be installed.<BR>
+				<b><i>-GAMETYPE</b></i> - Sets the gametype intended to be run on the server.  Options are sdGameRulesObjective, sdGameRulesCampaign, and sdGameRulesStopWatch.<BR>
+				<b><i>-ROTATION</b></i> - Sets the rotation of maps/campaigns to be played.<BR>
+				<b><i>-TIME LIMIT</b></i> - Sets the amount of minutes before the match ends.<BR>
+				<b><i>-REQUIRE PASSWORD</b></i> - Toggles if a password is required to connect to the server.  If True, the password field must be filled out in order for this to work.<BR>
+				<b><i>-PASSWORD</b></i> - Sets the password that users will need to enter in order to join the server.<BR>
+				<b><i>-LAN SERVER</b></i> - Enabling this prevents the server allowing users connecting via the Internet.<BR>
+				<b><i>-LAN SERVER AUTHENTICATION</b></i> - Allows the LAN server to authenticate as a Ranked server (not available in the Lite Server).</P>
+				<BR>
+				<BR>
+				<h5>Play Options</h5>
+				<b><i>-TEAM BALANCE</b></i> - If enabled, this prevents players from joining a team that has more players on it than the other team.  If bots are available in a match, they will attempt to even the teams out allowing human players to switch teams more freely.<BR>
+				<b><i>-TEAM DAMAGE</b></i> - If enabled, players can injure vehicles and players on their own team.<BR>
+				<b><i>-PUNKBUSTER ENABLED</b></i> - Toggles the use of the PunkBuster Anti-cheating system.</P>
+				<BR>
+				<BR>
+				<h5>Bot Options</h5>
+				<b><i>-MINIMUM CLIENTS</b></i> - Bots will fill slots on the server until this number of players is reached.  Bots will fill or vacate slots as human players on the server connect and disconnect.  If the "Number of Strogg" or the "Number of GDF" values are set to "No Limit", the bots will attempt to balance themselves between each team up to the value set in this setting.<BR>
+				<b><i>-NUMBER OF STROGG</b></i> - Number of bots that will join the Strogg team.<BR>
+				<b><i>-NUMBER OF GDF</b></i> - Number of bots that will join the GDF team.<BR>
+				<b><i>-SKILL</b></i> - Overall skill level of the bots.<BR>
+				<b><i>-WEAPON SKILL</b></i> - Skill level of bots use of firearms.<BR>
+				<b><i>-TACTICAL SKILL</b></i> - Skill level of the bot's tactical capabilities.<BR>
+				<b><i>-BOTS DO OBJECTIVES</b></i> - Toggles whether bots will complete objectives.</P>
+				<BR>
+				<BR>
+				<h5>Game Environment</h5>
+				<b><i>-EXECUTABLE</b></i> - Specifies the location of the ET:QW executable file.  This must be set before a server can be launched.<BR>
+				<b><i>-ADDITIONAL PARAMETERS</b></i> - Sets any cvars or commands to be executed at runtime.</P>
+				<BR>
+				<BR>
+				<h5>Advanced Options</h5>
+				<b><i>-PURE</b></i> - Enabling this prevents players from connecting that have modified their game files and assets.<BR>
+				<b><i>-ADMIN START</b></i> - Enabling this prevents the game from exiting warmup until a player with Admin access performs the startmatch action.<BR>
+				<b><i>-SAVE XP</b></i> - Enabling this will tell the server to remember a player's XP during a round or campaign that disconnects and reconnects.<BR>
+				<b><i>-DISABLE VOTING</b></i> - This prevents players from calling votes to change options on the server.<BR>
+				<b><i>-ALLOW SPECTATORS</b></i> - Enabling this forces players to join a team, preventing players from spectating.<BR>
+				<b><i>-ALLOW LATE JOIN</b></i> - This allows players to join a team after a round has started.<BR>
+				<b><i>-EXECUTE MAP CONFIGS</b></i> - Executes per-map config files to change settings when maps change.<BR>
+				<b><i>-GAME READY PERCENT</b></i> - Specifies the percentage of players that need to 'ready-up' before the round will begin.<BR>
+				<b><i>-GAME REVIEW PAUSE</b></i> - Sets the amount of time in minutes that the end-game scoreboard will be displayed prior to loading the next map in the rotation.<BR>
+				<b><i>-GAME REVIEW READY WAIT</b></i> - If enabled, tells server not to load the next map until all players have clicked Ready.<BR>
+				<b><i>-WARMUP LENGTH</b></i> - Sets the amount of time in minutes for the warmup period.<BR>
+				<b><i>-WARMUP DAMAGE</b></i> - Toggles player's ability to inflict damage during warmup.<BR>
+				<b><i>-MUTE SPECTATORS</b></i> - Prevents text chat sent by spectators from being seen by players that are on a team.<BR>
+				<b><i>-DISABLE GLOBAL CHAT</b></i> - Prevents players from text chatting between teams.</P>
+				<BR>
+				<BR>
+				<h5>Complaints</h5>
+				<b><i>-COMPLAINT LIMIT</b></i> - Number of complaints a player must receive in order to be kicked from the server.<BR>
+				<b><i>-UNIQUE COMPLAINT LIMIT</b></i> - Number of complaints a player must reach from different players to be kicked from the server.<BR>
+				<b><i>-WARNING LIMIT</b></i> - Number of warnings at which a player will be kicked.<BR>
+				<b><i>-FIRE SUPPORT</b></i> - Toggles players being able to file complaints for being killed by friendly fire support.<BR>
+				<b><i>-HE/PLASMA CHARGE</b></i> - Toggles the player's ability to file complaints for being killed by friendly charges.<BR>
+				<b><i>-EXPLOSIVES</b></i> - Toggles the player's ability to be able to file complaints for being killed by friendly explosives.<BR>
+				<b><i>-VEHICLES</b></i> - Toggles the player's ability to file complaints when killed by friendly vehicles.</P>
+				<h5>Information</h5>
+				<b><i>-MOTD1</b></i> - This sets the first line displayed in the server's Message of the Day in the game browser and loading screen.<BR>
+				<b><i>-MOTD2</b></i> - This sets the second line displayed in the server's Message of the Day in the game browser and loading screen.<BR>
+				<b><i>-MOTD3</b></i> - This sets the third line displayed in the server's Message of the Day in the game browser and loading screen.<BR>
+				<b><i>-MOTD4</b></i> - This sets the fourth line displayed in the server's Message of the Day in the game browser and loading screen.<BR>
+				<b><i>-ADMIN</b></i> - Name of the server administrator.<BR>
+				<b><i>-E-MAIL</b></i> - Email address of the server administrator.<BR>
+				<b><i>-IRC CHANNEL</b></i> - IRC channel for the server.<BR>
+				<b><i>-WEBSITE</b></i> - Website of the server.</P>
+				<BR>
+				<BR>
+				<h3>Ports</h3>
+				<BR>
+				In order to host an Internet server, the following ports must be open on your firewall and/or router:</P>
+				<P>Incoming:<BR>
+				UDP: 27733<BR>
+				UDP: 3074<BR>
+				<P>The first is the game port, which can be changed by using net_port (default 27733). The other is the DemonWare one, which can be changed by net_sdnetPort (default 3074).</BR>
+				<P>Besides that, outgoing TCP traffic should be allowed to:</BR>
+				<P>etqw-auth.mmp3.demonware.net:3074</BR>
+				<P>etqw-lsg.mmp3.demonware.net:3074</BR>
+				<P>ET:QW doesn't support NAT traversal.  If you are hosting a server through a router, you will need to enable DMZ and/or configure your router's port forwarding.  Please see your router documentation for information on how to enable this.</P>
+				<BR>
+				<h3>Configuring Admin & Remote Console</h3>
+				<BR>
+				<h5>Configuring Admin</h5>
+				In order to allow clients to have admin access to your server, you must configure the usergroups.dat file located in the /base folder of the server.  Open the file with a text editor such as notepad or wordpad.  The first and foremost thing that needs to be done is set the admin password as such:</P>
+				<P>Find the line that appears as:</P>
+				<P>   //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PASSWORD</P>
+				<P>Remove the '//', and specify the password you want where 'PASSWORD' appears above.</P>
+				<P>Close as save the file, and then start your server.  Clients will then be able to use the specified password to access the in-game admin controls.</P>
+				<h5>Configuring Remote Console(RCON)</h5>
+				A feature of the ET:QW engine is the ability to send console commands and cvars to the server from a client.  A server must be set up with a password before this feature will work.  Launch a server, then type the following in the command line:</P>
+				<P>   net_ServerRemoteConsolePassword &quot;PASSWORD&quot;</P>
+				<P>Once set, connect to the server from a client and enter the following in the console (hold CTRL+ALT, then press ~(TILDE))</P>
+				<P>   net_ClientRemoteConsolePassword &quot;PASSWORD&quot;</P>
+				<P>Once this is set, precede all commands and cvars with 'rcon' to send it to the server, as such:</P>
+				<P>   rcon si_rules &quot;sdGameRulesCampaign&quot;<BR>
+				   rcon spawnserver<BR>
+				<P>Note that when using rcon to query PunkBuster cvars, no feedback will be returned to the client console.<BR>
+				<h3>Servers with multiple IP Addresses & Instances</h3>
+				<BR>
+				<P>If you intend to host servers on different IPs on the same machine, make note that the following must be set on each server under Additional Parameters:</P>
+				<P>   +Net_IP &quot;&lt;IP of the server instance&gt;&quot;</P>
+				<P>So it should look like:</P>
+				<P>   +Net_IP &quot;192.168.0.100&quot;<BR>
+				   <BR>
+				Additionally if multiple servers are running on the same machine, separate ports must be specified for each instance using the net_port cvar:</P>
+				<P>   +Net_port &quot;&lt;port number here&gt;&quot;</P>
+				<BR>
+				<h3>Unbanning users that were banned through admin</h3>
+				<BR>
+				<P>If a user is banned through the admin menu, the only way to remove their ban is by removing their entry from the guidstates.dat file.  This file can be edited with any simple text editor such as Notepad or Wordpad.  The guidstates.dat file is located here:</P>
+				<P>   C:\Documents and Settings\&lt;YOUR WINDOWS ACCOUNT NAME&gt;\My Documents\id Software\Enemy Territory - QUAKE Wars\base</P>
+				<P>Note that this is a hidden folder, so 'Show hidden files and folders' needs to be enabled in your View options.</P>
+				<BR>
+				<h3>Disabling proficiencies in the middle of a match</h3>
+				<BR>
+<P>If an admin or vote passes to disable proficiencies, any proficiencies gained by the player will remain until the map restarts.  It is recommended that the map be restarted after the change.
+			</div>
+			<br class="clear" />
+			<div id="footer">
+				<a href="http://www.idsoftware.com/" id="id_logo" target="_blank" title="id Software website - Internet Connection Required"></a>
+				<a href="http://www.splashdamage.com/" id="splash_logo" target="_blank" title="Splash Damage website - Internet Connection Required"></a>
+				<a href="http://www.activision.com/" id="atvi_logo" target="_blank" title="Activision website - Internet Connection Required"></a>
+			</div>
+		</div>
+	</body>
+</html>
